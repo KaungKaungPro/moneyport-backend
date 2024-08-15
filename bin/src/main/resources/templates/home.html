@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<title>MoneyPort - Home</title>
+	</head>
+	<body>
+		<h1>MoneyPort - Home</h1>
+		<form th:action="@{/getTerms}" th:object="${searchObj}" method="post">
+			<input id="searchTerm" type="text" th:field="*{searchTerm}"/>
+			<button type="submit">Search</button>
+		</form>
+		<div th:if="${hasResults}">
+			<a th:each="result : ${results}" th:text="${result.name}" href=""></a>
+		</div>
+	</body>
+</html>

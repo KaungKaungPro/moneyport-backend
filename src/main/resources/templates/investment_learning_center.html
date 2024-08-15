@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<title>MoneyPort - Investment Learning Center</title>
+		<link rel="stylesheet" src="style.css"/>
+	</head>	
+
+	<body>
+		<h1>MoneyPort - Investment Learning Center</h1>
+		<form th:action="@{/getTerms}" th:object="${searchObj}" method="post">
+			<input th:field="searchTerm"/><button type="submit">Search</button>
+		</form>
+		<div th:if="hasResults" th:each="${result}"/>
+	</body>
+</html>
